@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <%= button_to 'HOME', root_path, method: :get, form: { data: { turbo_confirm: true } }  %>
+
     <%= yield %>
+
+    <dialog id="turbo-confirm">
+      <form metohd="dialog">
+        <p>Are you sure!</p>
+        <div>
+          <button value="cancel">Cancel</button>
+          <button value="confirm">Confirm</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>
